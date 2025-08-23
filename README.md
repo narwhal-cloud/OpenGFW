@@ -43,3 +43,8 @@ Telegram group: https://t.me/OpGFW
 - Abuse prevention for VPN/proxy services
 - Traffic analysis (log only mode)
 - Help you fulfill your dictatorial ambitions
+
+## Narwhal
+
+- Optional link (outbound, inbound, forward)
+- Support docker

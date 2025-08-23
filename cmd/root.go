@@ -183,6 +183,10 @@ type cliConfigIO struct {
 	WriteBuffer int  `mapstructure:"sndBuf"`
 	Local       bool `mapstructure:"local"`
 	RST         bool `mapstructure:"rst"`
+	Input       bool `mapstructure:"input"`
+	Output      bool `mapstructure:"output"`
+	Forward     bool `mapstructure:"forward"`
+	Docker      bool `mapstructure:"docker"`
 }
 
 type cliConfigReplay struct {
@@ -231,6 +235,12 @@ func (c *cliConfig) fillIO(config *engine.Config) error {
 			WriteBuffer: c.IO.WriteBuffer,
 			Local:       c.IO.Local,
 			RST:         c.IO.RST,
+			EnabledChains: io.EnabledChainsConfig{
+				Input:   c.IO.Input,
+				Output:  c.IO.Output,
+				Forward: c.IO.Forward,
+			},
+			Docker: c.IO.Docker,
 		})
 	}
 
